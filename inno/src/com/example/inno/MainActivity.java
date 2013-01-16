@@ -10,20 +10,21 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
+// Add comment1
 	private TextView txt;
 	Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
 			txt.setText(msg.getData().getString("counter"));
 		}
 	};
-	
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         txt = (TextView)findViewById(R.id.txt);
     }
-    
+
     @Override
     protected void onStart() {
     	super.onStart();
@@ -34,14 +35,14 @@ public class MainActivity extends Activity {
     			for (int i =0; i<10; i++) {
     				try {
     					Thread.sleep(1000);
-    					
+
     					// pass a message to the handler to print counter
     					Bundle b = new Bundle();
     					b.putString("counter", String.valueOf(i));
     					Message msg = new Message();
     					msg.setData(b);
     					handler.sendMessage(msg);
-    					
+
     					// Another way is to pass a runnable to the handler
     					/*handler.post(new Runnable() {
     						@Override
@@ -64,5 +65,5 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
-    
+
 }
