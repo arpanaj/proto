@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class MainActivity extends Activity {
 
 // Add comment1
+// Add comment2
 	private TextView txt;
 	Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
