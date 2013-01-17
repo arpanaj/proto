@@ -10,7 +10,8 @@ import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-//comment3
+// Add comment1
+// Add comment2
 	private TextView txt;
 	Handler handler = new Handler() {
 		public void handleMessage(Message msg) {
